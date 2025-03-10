@@ -69,7 +69,6 @@ const current = Date.now();
 const deltatime = current - time;
 time = current;
 
- 
   console.log("first");
 
   cube1.rotation.y += 0.01
