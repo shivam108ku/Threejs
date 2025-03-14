@@ -10,6 +10,7 @@ const cube = new THREE.Mesh(
     new THREE.MeshBasicMaterial({ color: 'red' })
 );
 scene.add(cube);
+// cube.lookAt(new THREE.Vector3(-0.5,1,1))
 
 const size = {
     width: window.innerWidth,
@@ -43,13 +44,22 @@ window.addEventListener('resize', () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
-window.addEventListener('dblclick', ()=>{
-    if(!document.fullscreenElement){
-       canvas.requestFullscreen()
-    }else{
-        document.exitFullscreen()
+// Fullscreen on Double Click
+window.addEventListener('dblclick', () => {
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (canvas.requestFullscreen) {
+            canvas.requestFullscreen();
+        } else if (canvas.webkitRequestFullscreen) {
+            canvas.webkitRequestFullscreen();
+        }
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
     }
-})
+});
 // Animation Loop
 const animation = () => {
     controls.update();
