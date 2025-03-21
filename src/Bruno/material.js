@@ -14,8 +14,6 @@ const scene = new THREE.Scene()
  material.metalnessMap = 
  material.color = new THREE.Color('red')
 
- 
-
  const sphere = new THREE.Mesh(
     new THREE.SphereGeometry(0.5,16,16),
     material

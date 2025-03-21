@@ -58,7 +58,6 @@ gsap.to(cube1.position, {
   duration: 1,
   delay: 1,
   x:0,
-  
 })
 
 // Animation
