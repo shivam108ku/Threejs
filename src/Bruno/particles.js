@@ -63,11 +63,7 @@ const particlesMaterial = new THREE.PointsMaterial({
 const particles = new THREE.Points(particlesGeometry , particlesMaterial)
 scene.add(particles)
 
- 
 
-
-
- 
 
 // Create Camera
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 100);
